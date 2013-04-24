@@ -151,7 +151,7 @@ strong,h1,h2,h3,h4,dt,h1 a,h2 a,h3 a,h4 a{font-weight:bold;}
 .i20{width:8px; height:13px; background:url(../img/i20.png) no-repeat; margin-left:5px;}
 
 /*-------------------文本框--------------------------*/
-.text{width:317px; height:41px; border:1px solid #CCCCCC; border-radius:4px; padding-left:15px; font-size:16px; box-shadow:inset 0 0 3px rgba(0,0,3px,0.08); margin-bottom:7px;}
+.text{width:317px; height:41px; border:1px solid #CCCCCC; border-radius:4px; padding-left:15px; font-size:16px; box-shadow:inset 0 0 3px rgba(200,200,200,.8); margin-bottom:7px;}
 .text:focus,
 .text.active{ border:1px solid #84B9E6; box-shadow:0 0 2px #CFDCE7}
 .text.error{border:1px solid #D75959;}
