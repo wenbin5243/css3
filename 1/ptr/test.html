@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="author" content="IntPtr" />
+        <title>
+            图片轮播
+        </title>
+        <style type="text/css">
+            .prev,
+            .next
+            {
+                display: none;
+                width: 20px;
+                height: 300px;
+                text-align: center;
+                line-height: 300px;
+            }
+            .prev:after
+            {
+                content: "<";
+            }
+            .next:after
+            {
+                content: ">";
+            }
+            .img-box
+            {
+                display: none;
+            }
+            .img
+            {
+                float: left;
+                width: 400px;
+                height: 300px;
+                text-align: center;
+                line-height: 300px;
+            }
+            .img:nth-child(1)
+            {
+                background: #69f;
+            }
+            .img:nth-child(2)
+            {
+                background: #fce;
+            }
+            .img:nth-child(3)
+            {
+                background: #3f6;
+            }
+            .nav
+            {
+                margin: 6px 0;
+                width: 16px;
+                height: 16px;
+                border: 1px solid #999;
+                border-radius: 9px;
+                display: inline-block;
+                background-color: #ddd;
+                box-shadow: 0 0 5px #ccc;
+                transition: all 0.2s linear;
+            }
+            .nav:hover
+            {
+                background-color: #eee;
+            }
+            .nav:active
+            {
+                background-color: #bbb;
+            }
+            #img-container
+            {
+                transition: all 0.2s linear;
+                width: 1200px;
+                height: 300px;
+            }
+            #container
+            {
+                width: 442px;
+                height: 300px;
+                border: 1px solid #666;
+            }
+            #img-div
+            {
+                float: left;
+                width: 400px;
+                height: 300px;
+                position: relative;
+                overflow: hidden;
+            }
+            #prev-div,
+            #next-div
+            {
+                float: left;
+                width: 20px;
+                height: 300px;
+                background-color: #ddd;
+                transition: all 0.2s linear;
+            }
+            #prev-div:hover,
+            #next-div:hover
+            {
+                background-color: #eee;
+            }
+            #prev-div:active,
+            #next-div:active
+            {
+                background-color: #bbb;
+            }
+            #prev-div
+            {
+                border-right: 1px solid #666;
+            }
+            #next-div
+            {
+                border-left: 1px solid #666;
+            }
+            #nav-tip-div
+            {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 25px;
+                z-index: 1;
+            }
+            #nav-tip-div:hover + #nav-div
+            {
+                bottom: 0;
+            }
+            #nav-div
+            {
+                position: absolute;
+                left: 0;
+                bottom: -30px;
+                width: 100%;
+                height: 30px;
+                z-index: 2;
+                background-color: rgba(1,1,1,0.3);
+                text-align: center;
+                transition: all 0.2s linear;
+            }
+            #nav-div:hover
+            {
+                bottom: 0;
+            }
+            #img-1-box:checked ~ div .prev:nth-child(1),
+            #img-2-box:checked ~ div .prev:nth-child(2),
+            #img-3-box:checked ~ div .prev:nth-child(3),
+            #img-1-box:checked ~ div .next:nth-child(1),
+            #img-2-box:checked ~ div .next:nth-child(2),
+            #img-3-box:checked ~ div .next:nth-child(3)
+            {
+                display: inline-block;
+            }
+            #img-1-box:checked ~ div #img-container
+            {
+                margin-left: 0;
+            }
+            #img-2-box:checked ~ div #img-container
+            {
+                margin-left: -400px;
+            }
+            #img-3-box:checked ~ div #img-container
+            {
+                margin-left: -800px;
+            }
+            #img-1-box:checked ~ div .nav:nth-child(1),
+            #img-1-box:checked ~ div .nav:nth-child(1):hover,
+            #img-1-box:checked ~ div .nav:nth-child(1):active,
+            #img-2-box:checked ~ div .nav:nth-child(2),
+            #img-2-box:checked ~ div .nav:nth-child(2):hover,
+            #img-2-box:checked ~ div .nav:nth-child(2):active,
+            #img-3-box:checked ~ div .nav:nth-child(3),
+            #img-3-box:checked ~ div .nav:nth-child(3):hover,
+            #img-3-box:checked ~ div .nav:nth-child(3):active
+            {
+                background-color: #69f;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <input class="img-box" name="img-box" type="radio" checked="checked" id="img-1-box" />
+            <input class="img-box" name="img-box" type="radio" id="img-2-box" />
+            <input class="img-box" name="img-box" type="radio" id="img-3-box" />
+            <div id="prev-div">
+                <label class="prev" for="img-3-box">
+                </label>
+                <label class="prev" for="img-1-box">
+                </label>
+                <label class="prev" for="img-2-box">
+                </label>
+            </div>
+            <div id="img-div">
+                <div id="img-container">
+                    <div class="img">
+                        Image 1
+                    </div>
+                    <div class="img">
+                        Image 2
+                    </div>
+                    <div class="img">
+                        Image 3
+                    </div>
+                </div>
+                <div id="nav-tip-div">
+                </div>
+                <div id="nav-div">
+                    <label class="nav" for="img-1-box">
+                    </label>
+                    <label class="nav" for="img-2-box">
+                    </label>
+                    <label class="nav" for="img-3-box">
+                    </label>
+                </div>
+            </div>
+            <div id="next-div">
+                <label class="next" for="img-2-box">
+                </label>
+                <label class="next" for="img-3-box">
+                </label>
+                <label class="next" for="img-1-box">
+                </label>
+            </div>
+        </div>
+    </body>
+</html>
