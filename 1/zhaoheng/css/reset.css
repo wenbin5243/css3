@@ -1,0 +1,92 @@
+﻿@charset "utf-8";
+/*
+*jieorlin CSS Reset
+*v1.2.0
+*2012-4-9
+*理念：1. reset 的目的不是清除浏览器的默认样式，这仅是部分工作。清除和重置是紧密不可分的。
+*    2. reset 的目的不是让默认样式在所有浏览器下一致，而是减少默认样式有可能带来的问题。
+*    3. reset 期望提供一套普适通用的基础样式。推荐根据具体需求，裁剪和修改后再使用。
+*	 特色：1. 适应中文；2. 适应最新主流浏览器。3.包含html5元素
+*/
+
+html { color:#000;  /*添加让用户可以自定义字体 */ -webkit-text-size-adjust: 100%;/* 防止IOS文字大小调整方向发生变化后，没有禁止用户缩放 */ -ms-text-size-adjust: 100%; }
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */ dl, dt, dd, ul, ol, li, /* list elements 列表元素 */ pre, /* text formatting elements 文本格式元素 */ form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */ th, td /* table elements 表格元素 */ { margin: 0; padding: 0; }
+/* 设置默认字体 */
+body, button, input, select, textarea /* for ie */ { font: 12px/1.333 tahoma, arial, \5b8b\4f53, sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+/* 重置列表元素(li继承ul) */
+ul, ol { list-style:none outside none; }
+/*防止 ul{float:left; display:inline;} IE6-7 li产生左边距*/
+/* 重置文本格式元素 */
+ins, a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+/* 统一上标和下标 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { vertical-align:middle; border: 0 none; -ms-interpolation-mode: bicubic; } /* 让链接里的 img 无边框; 提高 IE7 中缩放图像时的质量 */
+button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+select { height:22px; line-height:18px; padding:2px 0; font-size: 12px; } /* 下拉框比较合适的样式 */
+/* 注：optgroup 无法扶正 */
+button, input[type="button"], input[type="reset"], input[type="submit"], input[type="file"] { cursor: pointer; -webkit-appearance: button; *overflow: visible;
+}
+button::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner {
+ border:0 none;
+padding:0;
+}  /* 去除firefox默认内部焦点框 */
+label { cursor:pointer; }
+/* 重置表格元素 */
+table {
+*border-collapse: collapse; border-spacing: 0; }/* 让table可以加圆角 */
+/* IE bug fixed: th 不继承 text-align*/
+th { text-align:inherit; }
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe { display:block; }
+/* 重置 HTML5 元素 */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { display: block; margin: 0; padding: 0; }
+mark { background: #ff0; }/* for IE */
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video { display: inline-block; *display: inline;
+zoom: 1; }
+/* 去掉 firefox 下此元素的边框 */
+abbr, acronym { border:0; font-variant:normal; }
+/* 一致的 del 样式 */
+del { text-decoration:line-through; }
+/* 清除浮动 */
+.fn-clear:after { visibility:hidden; display:block; content:"\200b";/* 宽度为0的空格 */ clear:both; height:0; }
+.fn-clear { zoom:1; }/* for IE6 IE7 */
+/* 清除浮动-语义化 */
+.fn-group:after { visibility:hidden; display:block; content:"\200b";/* 宽度为0的空格 */ clear:both; height:0; }
+.fn-group { zoom:1; }/* for IE6 IE7 */
+/* 设置内联, 减少浮动带来的bug */
+.fn-left, .fn-right { *display:inline;}
+.fn-left { float:left; }
+.fn-right { float:right; }
+/* inline-block, 兼容IE 6-7 */
+.fn-ib { display:inline-block; *display:inline;
+zoom:1; vertical-align:top; }
+/* 隐藏, 通常用来与 JS 配合 */
+body .fn-hide { display:none; }
+/* 溢出文字显示省略号 */
+.fn-texthide { display:inline-block; *display:inline;
+zoom:1; vertical-align:top; white-space:nowrap; word-wrap:normal; overflow:hidden; text-overflow:ellipsis; max-width:100%; _width:100%; }
+
+/* 可访问性的隐藏内容,兼容IE6 */
+.visually-hidden { position: absolute !important; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ clip: rect(1px, 1px, 1px, 1px); padding:0 !important; border:0 none!important; height: 1px !important; width: 1px !important; overflow: hidden; }
+
+/* 可访问性的隐藏文本,IE6下有一个白边通过,margin负值视觉隐藏 */
+.text-hidden { font: 0/0 xxoo !important; text-shadow: none !important; color: transparent; _margin-top:-2px;}
+
+.fn-nowarp { white-space:nowrap; word-wrap:normal; }
+
+.fn-bfc{display:table-cell; *zoom:1;}
+.fn-bfc:after{clear: both; display: block; visibility: visible; overflow: hidden; height: 0 !important; line-height: 0; font-size: xx-large; content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x "; }
+
+.box-shadow { border-radius:3px; box-shadow:0 1px 3px rgba(30, 30, 30, .2); border:1px solid #CCC; background:#FFF; -moz-transition: all 0.5s ease 0s; -webkit-transition: all 0.5s ease 0s; -o-transition: all 0.5s ease 0s; transition: all 0.5s ease 0s; }
+.box-shadow:hover { border-color:rgba(82, 168, 236, 0.5); box-shadow:0 1px 6px rgba(82, 168, 236, 0.5); }

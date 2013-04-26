@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>设计列表-项目协作管理平台</title>
+<meta name="keywords" content="关键字" /> 
+<meta name="description" content="描述" /> 
+<link href="css/style.css" rel="stylesheet" type="text/css" ignoreapd="1" />
+</head>
+
+<body>
+<div id="h" role="heading">
+	<div class="r r3 clearfix">
+		<div class="c c1 fl">
+			<span class="hover">
+				<a href="#" class="i i5 ir">返回</a>
+				<span class="s1">
+					<i class="i"></i>返回
+				</span>
+			</span>
+			<span class="click1">
+				<form action="" method="post">
+					<label for="project_name">短信列表对话窗口</label>
+					<input id="project_name" name="project_name" />
+				</form>
+			</span>
+		</div>
+		<div class="c c2">
+			<div class="d d1 fl">
+				<span class="hover">
+					<form action="" method="post">
+						<label for="picture" class="i i14 ir">新的设计图</label>
+						<input type="file" id="picture" name="picture" class="vh" />
+					</form>
+					<span class="s1">
+						<i class="i"></i>新的设计图
+					</span>
+				</span>
+			</div>
+			<div class="d d2 fl">
+				<span class="hover">
+					<a href="#" class="i i15 ir">设计图连线</a>
+					<span class="s1">
+						<i class="i"></i>设计图连线
+					</span>
+				</span>
+			</div>
+			<div class="d d3 fl">
+				<span class="hover">
+					<a href="#" class="i i16 ir">移动设计版</a>
+					<span class="s1">
+						<i class="i"></i>移动设计版
+					</span>
+				</span>
+			</div>
+			<div class="d d4 fl">
+				<span class="hover">
+					<a href="#" class="i i17 ir">设计稿全貌</a>
+					<span class="s1">
+						<i class="i"></i>设计稿全貌
+					</span>
+				</span>
+			</div>
+			<div class="d d5 fl">
+				<span class="hover">
+					<a href="#" class="a1"><span class="s2">100%</span><i class="i i20"></i></a>
+					<span class="s1">
+						<i class="i"></i>
+						<ul>
+							<li>200%</li>
+							<li>150%</li>
+							<li>100%</li>
+							<li>50%</li>
+						</ul>
+					</span>
+				</span>
+			</div>
+		</div>
+		<div class="c c3 fr">
+			<ul class="clearfix">
+				<li class="fl">
+					<span class="hover">
+						<a href="#" class="i i18 ir">设置</a>
+						<span class="s1">
+							<i class="i"></i>设置
+						</span>
+					</span>
+				</li>
+				<li class="fl">
+					<span class="hover">
+						<a href="#" class="i i19 ir">帮助</a>
+						<span class="s1">
+							<i class="i"></i>帮助
+						</span>
+					</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="b" role="main">
+	<h1 class="vh">设计列表</h1>
+	<div class="r r3 clearfix">
+		<!--设计稿列表-->
+		<div class="m m9">
+			<div class="h">
+				<h2 class="vh">设计稿列表</h2>
+			</div>
+			<div class="b">
+				<!--<ul>-->
+					<!--<li style="left:500px; top:200px;"><a href="#"><img src="http://placebox.es/120/200" alt=""></a></li>-->
+					<!--<li style="left:700px; top:200px;"><a href="#"><img src="http://placebox.es/120/200" alt=""></a></li>-->
+					<!--<li style="left:500px; top:500px;"><a href="#"><img src="http://placebox.es/120/200" alt=""></a></li>-->
+					<!--<li style="left:700px; top:500px;"><a href="#"><img src="http://placebox.es/120/200" alt=""></a></li>-->
+				<!--</ul>-->
+			</div>
+		</div>
+        <!--设计稿列表-->
+        <!--遮罩层-->
+        <div class="mask"></div>
+        <!--遮罩层-->
+	</div>
+</div>
+<script src="js/jquery.min.js" ignoreapd="1"></script>
+<script src="js/raphael.js" ignoreapd="1"></script>
+<script src="js/line.js" ignoreapd="1"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script>
+$(function(){
+	//设计稿拖动
+	$('.m9 li').draggable();
+	//修改项目名
+	$('.click1').click(function(){
+		label=$(this).find('label');
+		input=$(this).find('input');
+		var label_text=label.text();
+		input.val(label_text);
+		label.hide();
+		input.select().show();
+	})
+	$('.click1 input').blur(function(){
+		input_val=input.val();
+		label.text(input_val);
+		label.show();
+		input.hide();
+	})
+	//顶部图标点击加背景色
+	$('.i15,.i16').toggle(function(){
+		$(this).addClass('active');	
+		return false;
+	},function(){
+		$(this).removeClass('active');	
+		return false;	
+	})
+	//放大的尺寸选择,这样改变尺寸，移动设计高会有问题，可能要换成svg实现。
+	$('#h .r3 .c2 .d5 .a1').click(function(){
+		$(this).siblings('.s1').show();
+		return false;
+	})
+
+})
+</script>
+<!--[if IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a-min.js" ignoreapd="1"></script>
+<script>
+	DD_belatedPNG.fix('');
+</script>
+<![endif]-->
+</body>
+</html>
