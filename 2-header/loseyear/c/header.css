@@ -1,0 +1,54 @@
+body{font-size:0.75em;}
+@font-face 
+{
+	font-family: 'logo';
+	src:url('../f/TROLLKABB_FONT.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;  
+}
+
+ul{padding:0 1em 0 0;}
+li{list-style:none;}
+.one{
+	background:#c41215;
+	border-radius:4px;
+	box-shadow:inset 0 -.3em .5em .1em rgba(134,11,13,.4);
+	float:left;
+	height:7.5em;
+}
+.one > li
+{
+	float:left;
+	height:7.5em;
+	line-height:7.5em;
+}
+.one > li > a
+{
+	
+	color:#f9f9f9;
+	margin-left:.1em;
+	text-decoration:none;
+	text-shadow:2px 2px 1px #7e0b0d;
+	padding:.6em 1em;
+}
+.one > li + li > a
+{
+	background:none;
+	border:1px solid #c41215;
+}
+.one> li + li> a:hover
+{
+	border-radius:.4em;
+	border-width:.1em;
+	border-style:solid;
+	border-top-color:#830b0d;
+	border-left-color:#9e0e11;
+	border-right-color:#9e0e11;
+	border-bottom-color:red;
+	box-shadow:inset 0 .1em .1em .1em rgba(134,11,13,.4);
+}
+.one > li:nth-child(1) > a
+{
+	font-family:"logo";	
+	font-size:2em;
+}
