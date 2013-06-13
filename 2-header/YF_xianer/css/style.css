@@ -1,0 +1,143 @@
+@font-face {
+  font-family: 'BiraPERSONALUSEONLYRegular';
+  src: url('../fonts/bira-webfont.eot');
+  src: url('../fonts/bira-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/bira-webfont.woff') format('woff'), url('../fonts/bira-webfont.ttf') format('truetype'), url('../fonts/bira-webfont.svg#BiraPERSONALUSEONLYRegular') format('svg');
+}
+@font-face {
+  font-family: 'HelveticaBold';
+  src: url('../fonts/helvetica_bold_-webfont.eot');
+  src: url('../fonts/helvetica_bold_-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/helvetica_bold_-webfont.woff') format('woff'), url('../fonts/helvetica_bold_-webfont.ttf') format('truetype'), url('../fonts/helvetica_bold_-webfont.svg#HelveticaBold') format('svg');
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+body {
+  min-width: 940px;
+  background: #f2f2f2 url(../images/bg.gif) repeat left top;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "HelveticaBold", Helvetica, Arial, sans-serif;
+}
+.container {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+.header {
+  position: relative;
+  width: 100%;
+  margin-bottom: 35px;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+.header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+.header .navbar {
+  width: 100%;
+  overflow: hidden;
+}
+.header .logo a {
+  display: block;
+  float: left;
+  padding: 0 25px;
+  font-family: "BiraPERSONALUSEONLYRegular", Helvetica, Arial, sans-serif;
+  font-size: 47.6px;
+  font-weight: normal;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+.header .logo a:hover {
+  text-decoration: none;
+}
+.header .collapse {
+  float: left;
+}
+.header .nav a {
+  display: inline-block;
+  margin-right: 2px;
+  font-size: 14px;
+  font-weight: normal;
+}
+.header1 {
+  padding: 40px 0 60px 0;
+  background: #f2f2f2;
+  background-image: -webkit-radial-gradient(#ebebeb 15%, transparent 16%), -webkit-radial-gradient(#ebebeb 15%, transparent 16%);
+  background-image: -moz-radial-gradient(#ebebeb 15%, transparent 16%), -moz-radial-gradient(#ebebeb 15%, transparent 16%);
+  background-size: 10px 10px;
+  background-position: 0 0, 5px 5px;
+}
+.header1:before {
+  height: 40px;
+  background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.035) 15%, transparent 16%), -webkit-radial-gradient(rgba(0, 0, 0, 0.035) 15%, transparent 16%), -webkit-linear-gradient(#d9d9d9, #bababa 65%, #999999);
+  background-image: -moz-radial-gradient(rgba(0, 0, 0, 0.035) 15%, transparent 16%), -moz-radial-gradient(rgba(0, 0, 0, 0.035) 15%, transparent 16%), -moz-linear-gradient(#d9d9d9, #bababa 65%, #999999);
+  background-size: 10px 10px, 10px 10px, 100% 100%;
+  background-position: 0 0, 5px 5px, 100% 100%;
+}
+.header1 .navbar {
+  background-color: #d1d1d1;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), color-stop(55%, #eeeeee), to(#d1d1d1));
+  background-image: -webkit-linear-gradient(#eeeeee, #eeeeee 55%, #d1d1d1);
+  background-image: -moz-linear-gradient(#eeeeee, #eeeeee 55%, #d1d1d1);
+  background-image: -ms-linear-gradient(#eeeeee, #eeeeee 55%, #d1d1d1);
+  background-image: -o-linear-gradient(#eeeeee, #eeeeee 55%, #d1d1d1);
+  background-image: linear-gradient(#eeeeee, #eeeeee 55%, #d1d1d1);
+  padding: 10px 0 20px 0;
+  border: 1px solid #888888;
+  border-width: 1px 0 4px 0;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 1px 1px #ffffff;
+  -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 1px 1px #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 1px 1px #ffffff;
+}
+.header1 .logo a {
+  background-image: -webkit-linear-gradient(#c8c8c8, #6f6f6f);
+  -webkit-background-clip: text;
+  color: #6f6f6f;
+  -webkit-text-fill-color: transparent;
+}
+.header1 .nav .active a {
+  background-color: transparent;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.05)), to(transparent));
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.05), transparent);
+  background-image: -ms-linear-gradient(rgba(0, 0, 0, 0.05), transparent);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.05)), color-stop(100%, transparent));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.05), transparent);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.05), transparent);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05), transparent);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.125), 1px 1px 1px rgba(255, 255, 255, 0.8);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.125), 1px 1px 1px rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.125), 1px 1px 1px rgba(255, 255, 255, 0.8);
+}
+.header1 .nav a {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px #ffffff;
+}
+.header1 .nav a:hover {
+  background-color: transparent;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.05)), to(transparent));
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.05), transparent);
+  background-image: -ms-linear-gradient(rgba(0, 0, 0, 0.05), transparent);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.05)), color-stop(100%, transparent));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.05), transparent);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.05), transparent);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05), transparent);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.125), 1px 1px 1px rgba(255, 255, 255, 0.8);
+}
