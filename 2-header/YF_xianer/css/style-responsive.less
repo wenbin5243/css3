@@ -1,0 +1,399 @@
+// Scaffolding 脚手架
+// -------------------------
+
+@bodyBackground:        @white;
+@bodyMinWidth:          940px;	
+@textColor:             @gray;
+@baseline:              20px;
+
+// 边框
+// --------------------------
+@baseBorderRadius:      4px;
+@borderRadiusLarge:     6px;
+@borderRadiusSmall:     3px;
+
+// 链接
+// -------------------------
+@linkColor:             darken(@grayLight, 15%);
+@linkColorHover:        darken(@linkColor, 15%);
+
+// 间距
+// --------------------------
+
+@paddingLarge:          11px 19px; // 44px
+@paddingSmall:          2px 10px;  // 26px
+@paddingMini:           0 6px;   // 22px
+
+
+// 字体（大小14px，行高20px)
+// ------------------------
+ @font-face {
+	font-family: 'BiraPERSONALUSEONLYRegular';
+	src: url('../fonts/bira-webfont.eot'); 
+	src: url('../fonts/bira-webfont.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/bira-webfont.woff') format('woff'), 
+         url('../fonts/bira-webfont.ttf')  format('truetype'), 
+         url('../fonts/bira-webfont.svg#BiraPERSONALUSEONLYRegular') format('svg');
+}
+
+ @font-face {
+	font-family: 'HelveticaBold';
+	src: url('../fonts/helvetica_bold_-webfont.eot');
+	src: url('../fonts/helvetica_bold_-webfont.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/helvetica_bold_-webfont.woff') format('woff'), 
+         url('../fonts/helvetica_bold_-webfont.ttf')  format('truetype'), 
+         url('../fonts/helvetica_bold_-webfont.svg#HelveticaBold') format('svg'); 
+}
+
+@biraFontFamily:        "BiraPERSONALUSEONLYRegular", Helvetica, Arial, sans-serif;
+@helveticatFontFamily:  "HelveticaBold", Helvetica, Arial, sans-serif;
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@baseFontSize:          14px;
+@baseLineHeight:        20px;
+@baseFontWeight:        normal;
+@baseFontStyle:         normal;
+@baseFontVariant:       normal;
+@baseFontFamily:        @helveticatFontFamily;
+@altFontFamily:         @serifFontFamily;
+
+@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
+@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
+@fontSizeMini:          @baseFontSize * 0.75; // ~11px
+
+@fontStyleItalic:       italic;
+@fontStyleOblique:      oblique;
+
+@fontVariantSmall:      small-caps;
+
+
+// 边框及圆角
+//-------------------------
+.border-radius(@radius){
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.border(@color){
+	border:1px solid @color;
+}
+
+
+// 文字阴影和盒阴影
+// -------------------------
+.text-shadow(@shadow){
+	text-shadow: @shadow;
+}
+
+.box-shadow(@shadow) {
+	-webkit-box-shadow: @shadow;
+	-moz-box-shadow: @shadow;
+	box-shadow: @shadow;
+}
+
+.box-shadow(@shadowA, @shadowB) {
+	-webkit-box-shadow: @shadowA, @shadowB;
+	-moz-box-shadow: @shadowA, @shadowB;
+	box-shadow: @shadowA, @shadowB;
+}
+
+
+// 线性渐变
+// --------------------------
+#linearGradient {
+  .horizontal (@startColor, @endColor) {
+    background-color: @endColor;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor)); // Konqueror
+    background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(left, @startColor, @endColor); // IE10
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, @startColor), color-stop(100%, @endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(left, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(left, @startColor, @endColor); // Le standard
+  }
+  .vertical (@startColor, @endColor) {
+    background-color: @endColor;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor)); // Konqueror
+    background-image: -moz-linear-gradient(@startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(@startColor, @endColor); // IE10
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(@startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(@startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(@startColor, @endColor); // The standard
+  }
+  .directional (@startColor, @endColor, @deg: 45deg) {
+    background-color: @endColor;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(@deg, @startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(@deg, @startColor, @endColor); // IE10
+    background-image: -webkit-linear-gradient(@deg, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(@deg, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(@deg, @startColor, @endColor); // The standard
+  }
+  .vertical-three-colors(@startColor, @midColor, @colorStop: 50%, @endColor) {
+    background-color: @endColor;
+    background-repeat: no-repeat;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @midColor), to(@endColor));
+    background-image: -webkit-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-image: -moz-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-image: -ms-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-image: -o-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-image: linear-gradient(@startColor, @midColor @colorStop, @endColor);
+  }
+}
+
+// 渐变制作的背景
+.polkaDotGradient(@color:@grayLight){
+	background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.035) 15%, transparent 16%),
+		-webkit-radial-gradient(rgba(0, 0, 0, 0.035) 15%, transparent 16%), 
+		-webkit-linear-gradient(lighten(@color, 25%),  lighten(@color, 13%) 65%, @color);
+	background-image: -moz-radial-gradient(rgba(0, 0, 0, 0.035) 15%, transparent 16%),
+		-moz-radial-gradient(rgba(0, 0, 0, 0.035) 15%, transparent 16%), 
+		-moz-linear-gradient(lighten(@color, 25%),  lighten(@color, 13%) 65%, @color);
+	background-size:10px 10px, 10px 10px, 100% 100%;
+	background-position: 0 0, 5px 5px, 100% 100%;
+}
+.polkaDot(@color:lighten(@grayLight, 32%)){
+	background-image: -webkit-radial-gradient(@color 15%, transparent 16%),
+		-webkit-radial-gradient(@color 15%, transparent 16%);
+	background-image: -moz-radial-gradient(@color 15%, transparent 16%),
+		-moz-radial-gradient(@color 15%, transparent 16%);
+	background-size:10px 10px;
+	background-position: 0 0, 5px 5px;
+}
+
+
+// 平滑过渡
+// -------------------------
+.transition(@transition:all .5s linear 1s){
+	-webkit-transition: @transition;
+	-o-transition: @transition;
+	-moz-transition: @transition;
+	transition: @transition;
+}
+
+// 清除浮动
+//-------------------------
+.clearfix {
+	zoom: 1;
+	&:before, &:after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+// 背景裁切
+//-------------------------
+.background-clip(@clip) {
+	-webkit-background-clip: @clip;
+	   -moz-background-clip: @clip;
+	        background-clip: @clip;
+}
+// LOGO 背景裁切渐变字
+//-------------------------
+.logoText(@color:@gray){
+	background-image:-webkit-linear-gradient(lighten(@color, 30%), lighten(@color, 10%));
+	-webkit-background-clip:text;
+	color:lighten(@color, 10%);
+	-webkit-text-fill-color: transparent;
+}
+
+
+// 多列
+//-------------------------
+.content-columns(@columnCount, @columnGap: 20px) {
+	-webkit-column-count: @columnCount;
+	   -moz-column-count: @columnCount;
+            column-count: @columnCount;
+      -webkit-column-gap: @columnGap;
+	     -moz-column-gap: @columnGap;
+              column-gap: @columnGap;
+}
+
+
+// 透明度
+//-------------------------
+.opacity(@opacity: 100) {
+	filter: e(%("alpha(opacity=%d)", @opacity));
+	-khtml-opacity: @opacity / 100;
+	  -moz-opacity: @opacity / 100;
+	       opacity: @opacity / 100;
+}
+
+
+// 配色
+// -------------------------
+
+// Grays灰
+// -------------------------
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+
+// Accent colors
+// -------------------------
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+
+// 布局
+// -------------------------
+body{
+	background:#f2f2f2 url(../images/bg.gif) repeat left top;
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+	font-family: @helveticatFontFamily;
+	padding:0;
+}
+
+.container{
+	width:100%;
+	overflow:hidden;
+	padding:0;
+}
+
+
+// header
+//----------------------------
+
+.header{
+	position:relative;
+	width:100%;	
+	margin-bottom:35px;	
+	.box-shadow(0 1px 5px rgba(0, 0, 0, 0.2));
+
+	&:before{
+		content:"";
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		z-index:3;
+	}
+
+	.navbar{
+		width:100%;
+		overflow:hidden;
+	}
+
+	.logo a{
+		display:block;
+		float:left;
+		padding:0 25px;
+		font-family: @biraFontFamily;
+		font-size: @fontSizeSmall*4;
+		font-weight: @baseFontWeight;
+		.text-shadow(1px 1px 5px rgba(0, 0, 0, 0.3));
+		&:hover{
+			text-decoration:none;
+		}
+	}
+
+	.collapse{
+		float:left;
+	}
+
+	.nav{ 
+		a{
+			display:inline-block;
+			margin-right:2px;
+			font-size:@baseFontSize;
+			font-weight:@baseFontWeight;
+		}
+	}
+}
+
+.header1{
+	padding:40px 0 60px 0;
+	background:lighten(@grayLight, 35%);
+	.polkaDot();
+
+	&:before{
+		height:40px;
+		.polkaDotGradient();	
+	}
+
+	.navbar{
+		#linearGradient > .vertical-three-colors(@grayLighter, @grayLighter, 55%, lighten(@grayLight, 22%));
+		padding:10px 0 20px 0;
+		.border(lighten(@gray, 20%));
+		border-width:1px 0 4px 0;
+		.box-shadow(0 5px 15px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 1));
+	}
+
+	.logo a{
+		.logoText(@gray);
+	}
+
+	.collapse .nav{ 
+		li.active a{
+			color:@linkColorHover;
+			#linearGradient > .vertical(rgba(0, 0, 0, 0.05), transparent);
+			.box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.125), 1px 1px 1px rgba(255, 255, 255, 0.8));
+		}
+
+		li a{
+			color:@linkColor;
+			.border-radius(@baseBorderRadius);
+			.text-shadow(0 1px 1px rgba(255, 255, 255, 1));
+			&:hover{
+				color:@linkColorHover;
+				#linearGradient > .vertical(rgba(0, 0, 0, 0.05), transparent);
+				box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.125), 1px 1px 1px rgba(255, 255, 255, 0.8);
+			}
+		}
+	}
+}
+
+// 响应式
+@media (max-width: 980px) {
+.header1{
+	.navbar{
+		padding:10px 0 20px 0;
+	}
+	
+	.navbar .btn-navbar{
+		margin:15px 15px 0 0;
+		#linearGradient > .vertical(lighten(@gray, 30%), lighten(@gray, 10%));
+	}
+	
+	.logo a{
+		padding-left:15px;
+	}
+
+	.collapse{
+		width:100%;
+	}
+
+	.nav{ 
+		padding:20px 15px 0 15px;
+
+		li{
+			width:100%;
+
+			a{
+				display:block;
+			}
+		}
+	}
+}
+}
